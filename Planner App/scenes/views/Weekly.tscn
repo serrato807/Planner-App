@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://weekly_view"]
+
+[ext_resource type="Script" path="res://scenes/views/Weekly.gd" id="1_weekly"]
+
+[node name="Weekly" type="VBoxContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_weekly")
+
+[node name="WeekNavMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="WeekNavBar" type="HBoxContainer" parent="WeekNavMargin"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 56)
+theme_override_constants/separation = 12
+
+[node name="PrevWeekBtn" type="Button" parent="WeekNavMargin/WeekNavBar"]
+layout_mode = 2
+text = "‹ Prev"
+flat = true
+
+[node name="WeekLabel" type="Label" parent="WeekNavMargin/WeekNavBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Week of January 1"
+
+[node name="ThisWeekBtn" type="Button" parent="WeekNavMargin/WeekNavBar"]
+layout_mode = 2
+text = "This Week"
+flat = true
+
+[node name="NextWeekBtn" type="Button" parent="WeekNavMargin/WeekNavBar"]
+layout_mode = 2
+text = "Next ›"
+flat = true
+
+[node name="WeekContentMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 12
+
+[node name="WeekScroll" type="ScrollContainer" parent="WeekContentMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WeekGrid" type="HBoxContainer" parent="WeekContentMargin/WeekScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10

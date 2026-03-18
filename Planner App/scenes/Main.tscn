@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://def62yb71dhy4"]
+
+[ext_resource type="Script" uid="uid://cbhpkue5mawh8" path="res://scenes/Main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/components/SidebarButton.tscn" id="2_sidebarbtn"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Layout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Sidebar" type="PanelContainer" parent="Layout"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+
+[node name="NavButtons" type="VBoxContainer" parent="Layout/Sidebar"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="TitleArea" type="HBoxContainer" parent="Layout/Sidebar/NavButtons"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+
+[node name="AppTitle" type="Label" parent="Layout/Sidebar/NavButtons/TitleArea"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 15
+text = "Planner"
+
+[node name="TitleSep" type="HSeparator" parent="Layout/Sidebar/NavButtons"]
+layout_mode = 2
+
+[node name="BtnToday" parent="Layout/Sidebar/NavButtons" instance=ExtResource("2_sidebarbtn")]
+layout_mode = 2
+text = "Today"
+
+[node name="BtnWeek" parent="Layout/Sidebar/NavButtons" instance=ExtResource("2_sidebarbtn")]
+layout_mode = 2
+text = "This Week"
+
+[node name="BtnMonthly" parent="Layout/Sidebar/NavButtons" instance=ExtResource("2_sidebarbtn")]
+layout_mode = 2
+text = "Monthly"
+
+[node name="BtnProjects" parent="Layout/Sidebar/NavButtons" instance=ExtResource("2_sidebarbtn")]
+layout_mode = 2
+text = "Projects"
+
+[node name="BtnMasterList" parent="Layout/Sidebar/NavButtons" instance=ExtResource("2_sidebarbtn")]
+layout_mode = 2
+text = "Master List"
+
+[node name="Spacer" type="Control" parent="Layout/Sidebar/NavButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContentArea" type="PanelContainer" parent="Layout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

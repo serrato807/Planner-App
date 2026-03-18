@@ -1,0 +1,242 @@
+[gd_scene load_steps=2 format=3 uid="uid://today_view"]
+
+[ext_resource type="Script" path="res://scenes/views/Today.gd" id="1_today"]
+
+[node name="Today" type="VBoxContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_today")
+
+[node name="NavMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="DayNavBar" type="HBoxContainer" parent="NavMargin"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 60)
+theme_override_constants/separation = 14
+
+[node name="PrevDayBtn" type="Button" parent="NavMargin/DayNavBar"]
+layout_mode = 2
+text = "‹"
+flat = true
+custom_minimum_size = Vector2(36, 0)
+
+[node name="DateLabel" type="Label" parent="NavMargin/DayNavBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Monday, January 1"
+
+[node name="CompletionCounter" type="Label" parent="NavMargin/DayNavBar"]
+layout_mode = 2
+text = "0 / 0 done"
+
+[node name="TodayBtn" type="Button" parent="NavMargin/DayNavBar"]
+layout_mode = 2
+text = "Today"
+flat = true
+
+[node name="NextDayBtn" type="Button" parent="NavMargin/DayNavBar"]
+layout_mode = 2
+text = "›"
+flat = true
+custom_minimum_size = Vector2(36, 0)
+
+[node name="PanelMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_bottom = 20
+
+[node name="ThreePanels" type="HBoxContainer" parent="PanelMargin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="TaskPanel" type="PanelContainer" parent="PanelMargin/ThreePanels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(280, 0)
+
+[node name="TaskScroll" type="ScrollContainer" parent="PanelMargin/ThreePanels/TaskPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TaskInner" type="VBoxContainer" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="TaskHeaderRow" type="HBoxContainer" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+theme_override_constants/separation = 0
+
+[node name="ColX" type="Label" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/TaskHeaderRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = "X"
+
+[node name="ColABC" type="Label" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/TaskHeaderRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(32, 0)
+text = "ABC"
+
+[node name="ColTask" type="Label" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/TaskHeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Task"
+
+[node name="HeaderSep" type="HSeparator" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner"]
+layout_mode = 2
+
+[node name="TaskRows" type="VBoxContainer" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AddTaskSep" type="HSeparator" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner"]
+layout_mode = 2
+
+[node name="AddTaskRow" type="HBoxContainer" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 38)
+theme_override_constants/separation = 4
+
+[node name="AddTaskInput" type="LineEdit" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/AddTaskRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "+ New task..."
+
+[node name="BtnA" type="Button" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/AddTaskRow"]
+layout_mode = 2
+text = "A"
+flat = true
+custom_minimum_size = Vector2(22, 0)
+
+[node name="BtnB" type="Button" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/AddTaskRow"]
+layout_mode = 2
+text = "B"
+flat = true
+custom_minimum_size = Vector2(22, 0)
+
+[node name="BtnC" type="Button" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/AddTaskRow"]
+layout_mode = 2
+text = "C"
+flat = true
+custom_minimum_size = Vector2(22, 0)
+
+[node name="SaveTaskBtn" type="Button" parent="PanelMargin/ThreePanels/TaskPanel/TaskScroll/TaskInner/AddTaskRow"]
+layout_mode = 2
+text = "Add"
+
+[node name="SchedulePanel" type="PanelContainer" parent="PanelMargin/ThreePanels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(240, 0)
+
+[node name="ScheduleScroll" type="ScrollContainer" parent="PanelMargin/ThreePanels/SchedulePanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScheduleInner" type="VBoxContainer" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ScheduleHeaderRow" type="HBoxContainer" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll/ScheduleInner"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+theme_override_constants/separation = 0
+
+[node name="ScheduleColTime" type="Label" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll/ScheduleInner/ScheduleHeaderRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(48, 0)
+text = "Time"
+
+[node name="ScheduleColEntry" type="Label" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll/ScheduleInner/ScheduleHeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Schedule"
+
+[node name="ScheduleHeaderSep" type="HSeparator" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll/ScheduleInner"]
+layout_mode = 2
+
+[node name="ScheduleRows" type="VBoxContainer" parent="PanelMargin/ThreePanels/SchedulePanel/ScheduleScroll/ScheduleInner"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NotesPanel" type="PanelContainer" parent="PanelMargin/ThreePanels"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_minimum_size = Vector2(240, 0)
+
+[node name="NotesScroll" type="ScrollContainer" parent="PanelMargin/ThreePanels/NotesPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NotesInner" type="VBoxContainer" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="NotesHeaderRow" type="HBoxContainer" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 30)
+theme_override_constants/separation = 0
+
+[node name="NotesColX" type="Label" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner/NotesHeaderRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = "X"
+
+[node name="NotesColNum" type="Label" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner/NotesHeaderRow"]
+layout_mode = 2
+custom_minimum_size = Vector2(32, 0)
+text = "#"
+
+[node name="NotesColText" type="Label" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner/NotesHeaderRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Notes"
+
+[node name="NotesHeaderSep" type="HSeparator" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner"]
+layout_mode = 2
+
+[node name="NoteRows" type="VBoxContainer" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="NotesAddSep" type="HSeparator" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner"]
+layout_mode = 2
+
+[node name="AddNoteRow" type="HBoxContainer" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 38)
+theme_override_constants/separation = 6
+
+[node name="AddNoteInput" type="LineEdit" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner/AddNoteRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "+ Add note..."
+
+[node name="SaveNoteBtn" type="Button" parent="PanelMargin/ThreePanels/NotesPanel/NotesScroll/NotesInner/AddNoteRow"]
+layout_mode = 2
+text = "Add"

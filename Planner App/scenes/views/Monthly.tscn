@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://monthly_view"]
+
+[ext_resource type="Script" path="res://scenes/views/Monthly.gd" id="1_monthly"]
+
+[node name="Monthly" type="HBoxContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_monthly")
+
+[node name="CalendarSection" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="MonthNavBar" type="HBoxContainer" parent="CalendarSection"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 52)
+theme_override_constants/separation = 12
+
+[node name="PrevMonthBtn" type="Button" parent="CalendarSection/MonthNavBar"]
+layout_mode = 2
+text = "‹"
+flat = true
+custom_minimum_size = Vector2(32, 0)
+
+[node name="MonthLabel" type="Label" parent="CalendarSection/MonthNavBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "January 2025"
+
+[node name="ThisMonthBtn" type="Button" parent="CalendarSection/MonthNavBar"]
+layout_mode = 2
+text = "Today"
+flat = true
+
+[node name="NextMonthBtn" type="Button" parent="CalendarSection/MonthNavBar"]
+layout_mode = 2
+text = "›"
+flat = true
+custom_minimum_size = Vector2(32, 0)
+
+[node name="NavSep" type="HSeparator" parent="CalendarSection"]
+layout_mode = 2
+
+[node name="DayHeaders" type="HBoxContainer" parent="CalendarSection"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+theme_override_constants/separation = 0
+
+[node name="CalGrid" type="GridContainer" parent="CalendarSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 7
+
+[node name="PanelDivider" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="TasksSection" type="VBoxContainer" parent="."]
+layout_mode = 2
+custom_minimum_size = Vector2(280, 0)
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TasksSectionHeader" type="Label" parent="TasksSection"]
+layout_mode = 2
+text = "KEY TASKS"
+custom_minimum_size = Vector2(0, 44)
+
+[node name="TasksHeaderSep" type="HSeparator" parent="TasksSection"]
+layout_mode = 2
+
+[node name="TasksColHeader" type="HBoxContainer" parent="TasksSection"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+theme_override_constants/separation = 0
+
+[node name="TaskColDate" type="Label" parent="TasksSection/TasksColHeader"]
+layout_mode = 2
+custom_minimum_size = Vector2(56, 0)
+text = "Date"
+
+[node name="TaskColStatus" type="Label" parent="TasksSection/TasksColHeader"]
+layout_mode = 2
+custom_minimum_size = Vector2(24, 0)
+text = "✓"
+
+[node name="TaskColABC" type="Label" parent="TasksSection/TasksColHeader"]
+layout_mode = 2
+custom_minimum_size = Vector2(28, 0)
+text = "ABC"
+
+[node name="TaskColTitle" type="Label" parent="TasksSection/TasksColHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Task"
+
+[node name="TasksColSep" type="HSeparator" parent="TasksSection"]
+layout_mode = 2
+
+[node name="TasksScroll" type="ScrollContainer" parent="TasksSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TaskRows" type="VBoxContainer" parent="TasksSection/TasksScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0

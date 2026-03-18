@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://projectcard_comp"]
+
+[ext_resource type="Script" path="res://scenes/components/ProjectCard.gd" id="1_projectcard"]
+
+[node name="ProjectCard" type="PanelContainer"]
+script = ExtResource("1_projectcard")
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Project Title"
+
+[node name="StatusBadge" type="Label" parent="VBoxContainer/Header"]
+layout_mode = 2
+text = "● Active"
+theme_override_font_sizes/font_size = 12
+
+[node name="TaskCountLabel" type="Label" parent="VBoxContainer/Header"]
+layout_mode = 2
+text = "0 tasks"
+theme_override_font_sizes/font_size = 12
+
+[node name="ExpandButton" type="Button" parent="VBoxContainer/Header"]
+layout_mode = 2
+text = "▼"
+flat = true
+
+[node name="ExpandedContent" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+visible = false
+theme_override_constants/separation = 8
+
+[node name="ExpandSep" type="HSeparator" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 13
+
+[node name="MilestoneHeader" type="Label" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+text = "MILESTONES"
+theme_override_font_sizes/font_size = 11
+
+[node name="MilestoneList" type="VBoxContainer" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="TasksHeader" type="Label" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+text = "TASKS"
+theme_override_font_sizes/font_size = 11
+
+[node name="TaskList" type="VBoxContainer" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AddTaskRow" type="HBoxContainer" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="AddTaskInput" type="LineEdit" parent="VBoxContainer/ExpandedContent/AddTaskRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Add task to project..."
+
+[node name="PriorityA" type="Button" parent="VBoxContainer/ExpandedContent/AddTaskRow"]
+layout_mode = 2
+text = "A"
+flat = true
+
+[node name="PriorityB" type="Button" parent="VBoxContainer/ExpandedContent/AddTaskRow"]
+layout_mode = 2
+text = "B"
+flat = true
+
+[node name="PriorityC" type="Button" parent="VBoxContainer/ExpandedContent/AddTaskRow"]
+layout_mode = 2
+text = "C"
+flat = true
+
+[node name="SaveTask" type="Button" parent="VBoxContainer/ExpandedContent/AddTaskRow"]
+layout_mode = 2
+text = "Save"
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+text = "SET STATUS"
+theme_override_font_sizes/font_size = 11
+
+[node name="StatusRow" type="HBoxContainer" parent="VBoxContainer/ExpandedContent"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StatusActive" type="Button" parent="VBoxContainer/ExpandedContent/StatusRow"]
+layout_mode = 2
+text = "Active"
+flat = true
+
+[node name="StatusPaused" type="Button" parent="VBoxContainer/ExpandedContent/StatusRow"]
+layout_mode = 2
+text = "Paused"
+flat = true
+
+[node name="StatusComplete" type="Button" parent="VBoxContainer/ExpandedContent/StatusRow"]
+layout_mode = 2
+text = "Complete"
+flat = true

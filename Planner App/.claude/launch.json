@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Planner Web App",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Volumes/SANDISKMINI/Project JDL/Godot Files/Planner Web App", "run", "dev"],
+      "port": 5173
+    }
+  ]
+}
